@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Flask Poem</title>
+<style>
+html, body {
+    min-height: 100%;
+}
+html {
+    position: relative;
+}
+body {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h1 {
+    margin-bottom: 10px;
+}
+.container {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.flash-message {
+    color: red;
+}
+.light {
+    font-weight: 200;
+}
+.heavy {
+    font-weight: 600;
+}
+.lead {
+    font-size: 1.16em;
+    margin-bottom: 35px;
+    margin-top: 0;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    width: 100%;
+    padding-bottom: 20px;
+    font-size: 0.8em;
+    text-align: center;
+}
+img {
+  width: 400px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1><span class="light">flask</span><span class="heavy">poem</span></h1>
+    <p class="lead">flaskpoem is just the TensorFlow for Poets model, deployed as a Flask application.</p>
+    <form action="" method="post" name="labeler">
+      <p>Image URL: <input type="text" name="img-url"></p>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+    {% if session.prediction %}
+    <img src="{{ session.image_path }}">
+    <p class="lead">Prediction: {{ session.prediction }}</p>
+    {% endif %}
+</div>
+<footer id="site-info">
+    <hr>
+    <p>Copyright &copy; 2017
+    <a href="http://www.raznikov.com" target="_blank">Phaedrus Raznikov</a>
+    </p>
+</footer>
+</body>
+</html>
