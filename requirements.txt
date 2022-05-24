@@ -18,6 +18,6 @@ protobuf==3.3.0
 pyparsing==2.2.0
 requests==2.16.5
 six==1.10.0
-tensorflow==1.1.0
+tensorflow==2.6.4
 urllib3==1.21.1
 Werkzeug==0.12.2
